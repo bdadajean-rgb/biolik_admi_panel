@@ -1,3 +1,126 @@
+# Biolik Admin Panel — Developer Guide
+
+This README provides a concise developer guide in English and French.
+
+---
+
+## English — Quick Start
+
+- **Prerequisites:** PHP 8.0+, Composer, Node.js (16+), npm/yarn, MySQL or PostgreSQL, Git.
+- **Copy env:**
+
+```powershell
+cd C:\Users\l\Desktop\bio\biolik_admi_panel
+copy .env.example .env   # PowerShell (Windows)
+# or on WSL / macOS / Linux:
+cp .env.example .env
+```
+
+- **Install dependencies:**
+
+```bash
+composer install
+npm install
+```
+
+- **Generate app key, migrate and seed DB:**
+
+```bash
+php artisan key:generate
+php artisan migrate --seed
+```
+
+- **Run development server / build assets:**
+
+```bash
+npm run dev      # dev server / watch
+npm run build    # production build
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+- **Run tests:**
+
+```bash
+php artisan test
+# or
+vendor/bin/phpunit
+```
+
+---
+
+## Français — Démarrage rapide
+
+- **Prérequis :** PHP 8.0+, Composer, Node.js (16+), npm/yarn, MySQL ou PostgreSQL, Git.
+- **Copier le fichier d'environnement :**
+
+```powershell
+cd C:\Users\l\Desktop\bio\biolik_admi_panel
+copy .env.example .env   # PowerShell (Windows)
+```
+
+- **Installer les dépendances :**
+
+```bash
+composer install
+npm install
+```
+
+- **Générer la clé, migrer et seed la base :**
+
+```bash
+php artisan key:generate
+php artisan migrate --seed
+```
+
+- **Lancer en développement / construire les assets :**
+
+```bash
+npm run dev
+npm run build
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+- **Lancer les tests :**
+
+```bash
+php artisan test
+```
+
+---
+
+## Notes for developers / Notes pour les développeurs
+
+- Environment variables: update the `.env` file (DB connection, MAIL, APP_ENV).
+- Database migrations are under `database/migrations` and seeders under `database/seeders`.
+- Frontend assets live in `resources/js` and `resources/css` and are built via Vite.
+- Use `php artisan route:list` and `php artisan config:cache` when preparing production.
+
+---
+
+## Git & CI / Git et déploiement
+
+- Recommended workflow: create a feature branch from `main` and open pull requests for review.
+- Commit message convention: short summary, optionally a longer description.
+- If you face SSH host verification when pushing, respond `yes` (not `y`) to the host prompt or add GitHub host to known_hosts:
+
+```powershell
+ssh-keyscan github.com >> $env:USERPROFILE\.ssh\known_hosts
+```
+
+- Ensure your SSH public key is added to your GitHub account and the key is loaded in the SSH agent.
+
+---
+
+## Contributing / Contribution
+
+- Fork the repository, implement changes on a feature branch, run tests and create a pull request.
+- Keep changes focused and add tests for bug fixes or features.
+
+---
+
+## Contact
+
+- Maintainer: bdadajean-rgb (GitHub)
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
